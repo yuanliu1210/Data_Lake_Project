@@ -22,54 +22,93 @@ Event bucket (s3://udacity-dend/log_data), contains info about actions done by u
 ### TABLE songs
 
 root
+
  |-- song_id: string (nullable = true)
+ 
  |-- title: string (nullable = true)
+ 
  |-- artist_id: string (nullable = true)
+ 
  |-- year: long (nullable = true)
+ 
  |-- duration: double (nullable = true)
+ 
 partitionBy("year", "artist_id")
+
 
 ### TABLE artists
  
  root
+ 
  |-- artist_id: string (nullable = true)
+ 
  |-- name: string (nullable = true)
+ 
  |-- location: string (nullable = true)
+ 
  |-- latitude: double (nullable = true)
+ 
  |-- longitude: double (nullable = true)
+ 
  
 ### TABLE users
 
 root
+
  |-- user_id: string (nullable = true)
+ 
  |-- first_name: string (nullable = true)
+ 
  |-- last_name: string (nullable = true)
+ 
  |-- gender: string (nullable = true)
+ 
  |-- level: string (nullable = true)
+ 
  
 ### TABLE time
 
 root
+
  |-- start_time: timestamp (nullable = true)
+ 
  |-- hour: integer (nullable = true)
+ 
  |-- day: integer (nullable = true)
+ 
  |-- week: integer (nullable = true)
+ 
  |-- month: integer (nullable = true)
+ 
  |-- year: integer (nullable = true)
+ 
  |-- weekday: integer (nullable = true)
+ 
 partitionBy("year", "month")
+
 
 ## Fact table
 
 ### TABLE songplays
+
 root
+
  |-- songplay_id: long (nullable = true)
+ 
  |-- start_time: timestamp (nullable = true)
+ 
  |-- user_id: string (nullable = true)
+ 
  |-- level: string (nullable = true)
+ 
  |-- song_id: string (nullable = true)
+ 
  |-- artist_id: string (nullable = true)
+ 
  |-- session_id: long (nullable = true)
+ 
  |-- location: string (nullable = true)
+ 
  |-- user_agent: string (nullable = true)
+ 
 partitionBy("year", "month")
